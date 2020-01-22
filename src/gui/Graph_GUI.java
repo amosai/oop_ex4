@@ -1,6 +1,10 @@
 package gui;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import algorithms.Graph_Algo;
+import gameClient.GameObject;
 import oop_dataStructure.oop_edge_data;
 import oop_dataStructure.oop_graph;
 import oop_dataStructure.oop_node_data;
@@ -16,6 +20,8 @@ public class Graph_GUI {
 	private double top ;
 	private double bottom ;
 	private oop_graph g;
+	private ArrayList<GameObject> objects = new ArrayList<>();
+	
 
 
 	public Graph_GUI(oop_graph g) {
@@ -102,10 +108,19 @@ public class Graph_GUI {
 
 
 	}
+		
+		private void drawObjects() {
+			for (GameObject gameObject : objects) {
+				OOP_Point3D sp= screen_position(gameObject.pos);
+				StdDraw.picture(sp.x(), sp.y(), gameObject.image);
+			}
+			
+		}
 
 	public void drawGraph() {
 		drawEdges();
 		drawNodes();
+		drawObjects();
 		
 		/*StdDraw.setPenRadius(0.05);
 		StdDraw.setPenColor(StdDraw.BLUE);
@@ -117,6 +132,10 @@ public class Graph_GUI {
 		/*StdDraw.setPenColor(StdDraw.MAGENTA);
 		StdDraw.line(0.2, 0.2, 0.8, 0.2);*/
 
+	}
+	
+	public void addGameObject(GameObject g) {
+		objects.add(g);
 	}
 
 	public void listening() throws InterruptedException {

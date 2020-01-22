@@ -1346,6 +1346,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
 	public static void picture(double x, double y, String filename) {
 		// BufferedImage image = getImage(filename);
 		Image image = getImage(filename);
+		//Image image=img.getScaledInstance(100, 100, Image.SCALE_DEFAULT);
 		double xs = scaleX(x);
 		double ys = scaleY(y);
 		// int ws = image.getWidth();    // can call only if image is a BufferedImage
