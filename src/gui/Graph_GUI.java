@@ -5,6 +5,7 @@ import java.util.List;
 
 import algorithms.Graph_Algo;
 import gameClient.GameObject;
+import gameClient.GameRobots;
 import oop_dataStructure.oop_edge_data;
 import oop_dataStructure.oop_graph;
 import oop_dataStructure.oop_node_data;
@@ -21,7 +22,7 @@ public class Graph_GUI {
 	private double bottom ;
 	private oop_graph g;
 	private ArrayList<GameObject> objects = new ArrayList<>();
-	
+	private ArrayList<GameRobots> robots = new ArrayList<>();
 
 
 	public Graph_GUI(oop_graph g) {
@@ -109,18 +110,32 @@ public class Graph_GUI {
 
 	}
 		
-		private void drawObjects() {
-			for (GameObject gameObject : objects) {
+		public void drawObjects() {
+			for (GameObject gameObject :objects ) {
 				OOP_Point3D sp= screen_position(gameObject.pos);
 				StdDraw.picture(sp.x(), sp.y(), gameObject.image);
 			}
+		}
 			
+			public void drawrobots() {
+				for (GameRobots gameObject : robots) {
+					OOP_Point3D sp= screen_position(GameRobots.pos);
+					StdDraw.picture(sp.x(), sp.y(), GameRobots.image);
+				}
+					 
+				}
+				
+				public void clearrobots() {
+//	//				for (GameRobots gamer : robots  ) {
+//                          robots.clear();
+						 
+//					}
 		}
 
 	public void drawGraph() {
 		drawEdges();
 		drawNodes();
-		drawObjects();
+		//drawObjects();
 		
 		/*StdDraw.setPenRadius(0.05);
 		StdDraw.setPenColor(StdDraw.BLUE);
@@ -133,11 +148,19 @@ public class Graph_GUI {
 		StdDraw.line(0.2, 0.2, 0.8, 0.2);*/
 
 	}
-	
+//	public void drawObjects() {
+//		
+//		//drawObjects();
+//		
+//	}
+//		//drawObjects();
 	public void addGameObject(GameObject g) {
 		objects.add(g);
 	}
-
+	public void addGameRobot(GameRobots r) {
+		robots.add(r);
+		
+	}
 	public void listening() throws InterruptedException {
 		char c = 0;
 		while (c != 'q') {
@@ -168,5 +191,6 @@ public class Graph_GUI {
 
 		}
 	}
+	
 
 }
