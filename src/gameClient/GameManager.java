@@ -27,55 +27,55 @@ import utils.Point3D;
 import utils.StdDraw;
 
 public class GameManager {
-	
+
 
 	static MyGameGUI mygui;
 	game_service game;
 	oop_graph gg;
 	ArrayList<Fruit> ListFruit;
 	ArrayList<Robot> ListRobots;
-	
-	 
+
+
 	public static void main(String[] a) {
-		
+
 		MyGameGUI ggui=new MyGameGUI();
 		ggui.init();
 		//TODO input validation
-		
+
 	}
-	
-	
-	
-public int manu_Or_Auto(){	
-	
-	JFrame input1 = new JFrame();
-	String num1 = JOptionPane.showInputDialog(input1, "press 1 for manual and 2 for automatic:" );
-	int r=Integer.parseInt(num1);
-	///  insert exception
-	return r;
-	
-}
-public int scenario_num(){
-	JFrame input2 = new JFrame();
-	String num2 = JOptionPane.showInputDialog(input2, "press scenario number please:" );
-	int s=Integer.parseInt(num2);
-	///  insert exception
-	return s;
-	
-}
-public ArrayList<Fruit> GetFruits ()
-{
-	return null;
 
-}
 
-// Init Robots
 
- 
-public ArrayList<Robot> initRobots(game_service game, oop_graph _gr)
-{
-	return null;
-	
-}
+	public int manu_Or_Auto(){	
+
+		JFrame input1 = new JFrame();
+		String num1 = JOptionPane.showInputDialog(input1, "press 1 for manual and 2 for automatic:" );
+		int r=Integer.parseInt(num1);
+		///  insert exception
+		return r;
+
+	}
+	public int scenario_num(){
+		JFrame input2 = new JFrame();
+		String num2 = JOptionPane.showInputDialog(input2, "press scenario number please:" );
+		int s=Integer.parseInt(num2);
+		///  insert exception
+		return s;
+
+	}
+	public ArrayList<Fruit> GetFruits ()
+	{
+		return null;
+
+	}
+
+	// Init Robots
+
+
+	public ArrayList<Robot> initRobots(game_service game, oop_graph _gr)
+	{
+		return null;
+
+	}
 
 }

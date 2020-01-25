@@ -2,7 +2,7 @@ package gameClient;
 
 
 
-import java.awt.Robot;
+//import java.awt.Robot;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -17,6 +17,7 @@ import org.junit.experimental.theories.ParameterSignature;
 
 import Server.Fruit;
 import Server.Game_Server;
+import Server.RobotG;
 import Server.game_service;
 import algorithms.Graph_Algo;
 import gui.Graph_GUI;
@@ -60,6 +61,18 @@ public class MyGameGUI {
 		//MyGameGUI myGameGUI = new MyGameGUI();
 		this.graphToGraph(game.getGraph());
 		this.graphToFruit(game.getFruits());
+		
+		
+		//test if we have fruits list
+		
+//		ArrayList<RobotG> rbs=robots(game.getRobots());
+//		for (RobotG r : rbs) {
+//			System.out.println("temp test:: "+r.getLocation().x());
+//		}
+		
+		
+		
+		
 		//this.graphToRobots(game.getRobots());
 		// now we have scenario and dr; fruits and robots and we need to draw them with our graph-gui
 		game.startGame();
@@ -296,22 +309,25 @@ public class MyGameGUI {
 		mygui.drawrobots();;
 	}
 
-	public  List<Robot> robots (List<String> g) {
-		List<Robot> fruits=new ArrayList<Robot>();
+	public  ArrayList<RobotG> robots (List<String> g) {
+		ArrayList<RobotG> robots=new ArrayList<RobotG>();
 		Iterator<String> f_iter =g.iterator();
 		while(f_iter.hasNext()){
 			try {
 				JSONObject line = new JSONObject(f_iter.next());
-				System.out.println("test json: "+line);
+				System.out.println("test json2: "+line);
 				JSONObject robot=line.getJSONObject("Robot");
 				int src =robot.getInt("src");
 				
 				String pos =robot.getString("pos");
 				OOP_Point3D p3 = new OOP_Point3D(pos);
-				            ///Robot(,,,,);/// i am not finish
-				GameRobots ob = new GameRobots(p3,"robot.png");
-				mygui.addGameRobot(ob);
-
+				        //   Robot(,,,,);/// i am not finish
+//				GameRobots ob = new GameRobots(p3,"robot.png");
+//				mygui.addGameRobot(ob);
+				
+				RobotG r=new RobotG(gg,src,p3.x(),p3.y());
+				
+				robots.add(r);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}	
@@ -319,12 +335,12 @@ public class MyGameGUI {
 
 		}
 		mygui.drawrobots();;
-		return null;
+		return robots;
 	}
 
-public  List<Fruit> Fruits ( ArrayList<String> g)
+public  ArrayList<Fruit> fruits (List<String> g)
 {
-	List<Fruit> fruits=new ArrayList<Fruit>();
+	ArrayList<Fruit> fruits=new ArrayList<Fruit>();
 	Iterator<String> f_iter =g.iterator();
 	while(f_iter.hasNext()){
 		try {
