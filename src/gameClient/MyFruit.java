@@ -4,11 +4,15 @@ import oop_dataStructure.oop_edge_data;
 import oop_utils.OOP_Point3D;
 import utils.Point3D;
 
-public class GameObject {
+public class MyFruit {
 	public OOP_Point3D pos;
 	public String image;//name of file.
 	public oop_edge_data ed;
-	public GameObject(OOP_Point3D pos, String image ) {
+	private double value;
+	private int type;
+	private boolean visited;
+	
+	public MyFruit(OOP_Point3D pos, String image ) {
 		super();
 		this.pos = pos;
 		this.image = image;
@@ -18,4 +22,5 @@ public class GameObject {
 		
 	
 	}
+	
 }

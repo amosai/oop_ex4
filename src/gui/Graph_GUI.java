@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import algorithms.Graph_Algo;
-import gameClient.GameObject;
+import gameClient.MyFruit;
 import gameClient.GameRobots;
 import oop_dataStructure.oop_edge_data;
 import oop_dataStructure.oop_graph;
@@ -21,7 +21,7 @@ public class Graph_GUI {
 	private double top ;
 	private double bottom ;
 	private oop_graph g;
-	private ArrayList<GameObject> objects = new ArrayList<>();
+	private ArrayList<MyFruit> objects = new ArrayList<>();
 	private ArrayList<GameRobots> robots = new ArrayList<>();
 
 
@@ -111,14 +111,14 @@ public class Graph_GUI {
 	}
 		
 		public void drawObjects() {
-			for (GameObject gameObject :objects ) {
-				OOP_Point3D sp= screen_position(gameObject.pos);
-				StdDraw.picture(sp.x(), sp.y(), gameObject.image);
+			for (MyFruit MyFruit :objects ) {
+				OOP_Point3D sp= screen_position(MyFruit.pos);
+				StdDraw.picture(sp.x(), sp.y(), MyFruit.image);
 			}
 		}
 			
 			public void drawrobots() {
-				for (GameRobots gameObject : robots) {
+				for (GameRobots MyFruit : robots) {
 					OOP_Point3D sp= screen_position(GameRobots.pos);
 					StdDraw.picture(sp.x(), sp.y(), GameRobots.image);
 				}
@@ -154,7 +154,7 @@ public class Graph_GUI {
 //		
 //	}
 //		//drawObjects();
-	public void addGameObject(GameObject g) {
+	public void addMyFruit(MyFruit g) {
 		objects.add(g);
 	}
 	public void addGameRobot(GameRobots r) {

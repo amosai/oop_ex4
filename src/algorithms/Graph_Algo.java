@@ -714,7 +714,7 @@ public class Graph_Algo implements graph_algorithms{
 	}
 
 
-	public List<oop_node_data> shortestPath(int src, int dest) {
+	public ArrayList<oop_node_data> shortestPath(int src, int dest) {
 		oop_node_data source = g.getNode(src);
 		dijkstra(source);
 		oop_node_data destination = g.getNode(dest);
@@ -726,6 +726,11 @@ public class Graph_Algo implements graph_algorithms{
 		}
 		pathe.add(source);
 		Collections.reverse(pathe);
+		
+		System.out.print("shortestPath algorithm result: ");
+		for (oop_node_data oo : pathe) 
+			System.out.print(oo.getKey()+" ");
+		System.out.println();
 
 		return pathe;
 	}

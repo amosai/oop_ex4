@@ -39,14 +39,16 @@ public class GameManager {
 	public static void main(String[] a) {
 
 		MyGameGUI ggui=new MyGameGUI();
-		ggui.init();
+		
+		
+		ggui.init(manu_Or_Auto());
 		//TODO input validation
 
 	}
 
 
 
-	public int manu_Or_Auto(){	
+	public static int manu_Or_Auto(){	
 
 		JFrame input1 = new JFrame();
 		String num1 = JOptionPane.showInputDialog(input1, "press 1 for manual and 2 for automatic:" );

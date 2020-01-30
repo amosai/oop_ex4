@@ -38,8 +38,8 @@ public class SimpleGameClient {
 
 	public static void main(String[] a) {
 		//test1();
-		MyGameGUI ggui=new MyGameGUI();
-		ggui.init();
+		//MyGameGUI ggui=new MyGameGUI();
+		//ggui.init();
 	}
 	//	public static void test1() {
 	//		int scenario_num = 2;
