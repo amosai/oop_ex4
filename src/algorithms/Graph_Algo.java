@@ -727,7 +727,7 @@ public class Graph_Algo implements graph_algorithms{
 		pathe.add(source);
 		Collections.reverse(pathe);
 		
-		System.out.print("shortestPath algorithm result: ");
+		//System.out.print(Thread.currentThread().getName()+" shortestPath algorithm result: ");
 		for (oop_node_data oo : pathe) 
 			System.out.print(oo.getKey()+" ");
 		System.out.println();

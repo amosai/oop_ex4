@@ -1,30 +1,32 @@
 package gameClient;
 
-public class Pair<T,K> {
+import java.util.ArrayList;
+
+import Server.Fruit;
+import oop_dataStructure.oop_node_data;
+
+public class Pair {
+	private Fruit fruit;
+	private ArrayList<oop_node_data> path;
 	
-	private T key;
-	private K value;
-	
-	public Pair(T key, K value) {
-		this.key = key;
-		this.value = value;
+	public Pair(Fruit fruit, ArrayList<oop_node_data> path) {
+		this.fruit = fruit;
+		this.path = path;
 	}
 
-	public T getKey() {
-		return key;
+	public Fruit getFruit() {
+		return fruit;
 	}
 
-	public void setKey(T key) {
-		this.key = key;
+	public void setFruit(Fruit fruit) {
+		this.fruit = fruit;
 	}
 
-	public K getValue() {
-		return value;
+	public ArrayList<oop_node_data> getPath() {
+		return path;
 	}
 
-	public void setValue(K value) {
-		this.value = value;
+	public void setPath(ArrayList<oop_node_data> path) {
+		this.path = path;
 	}
-	
-
 }

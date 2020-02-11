@@ -4,11 +4,10 @@ import oop_utils.OOP_Point3D;
 import utils.Point3D;
 
 public class GameRobots {
-	public static OOP_Point3D pos;
+	public  OOP_Point3D pos;
 	public static String image;//name of file.
 	public oop_edge_data ed;
 	public GameRobots(OOP_Point3D pos, String image ) {
-		super();
 		this.pos = pos;
 		this.image = image;
 	}
